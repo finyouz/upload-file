@@ -1,12 +1,11 @@
 # 本项目在发请求之前处理文件
 
 ## 1.未加密
-![](.\\public\\images\\未加密情况.png)
+![](.\\public\\images\\my3.png)
 ## 2.加密情况(无密码)
-![](.\\public\\images\\加密情况（无密码）.png)
+![](.\\public\\images\\my2.png)
 ## 3.加密情况(密码错误)
-![](.\\public\\images\\加密情况（密码错误）.png)
+![](.\\public\\images\\my1.png)
+
 ## 4.加密情况(密码正确)
-![](.\\public\\images\\加密情况（密码正确）.png)
-## 5.加密情况(密码正确)
-![](.\\public\\images\\解析成功.png)
+![](.\\public\\images\\my4.png)
