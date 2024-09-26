@@ -33,11 +33,16 @@ const parsePdfBytes = async(uint8Array)=>{
     const loadingTask = PDF.getDocument({
       data:uint8Array,
       password:password.value
-    });  
-    const pdf = await loadingTask.promise; 
-    console.log(pdf,444);
+    });
     
-    pageNum.value = pdf._pdfInfo.numPages
+    const pdf = await loadingTask.promise; 
+
+    if(pdf){
+      pageNum.value = pdf._pdfInfo.numPages
+      ElMessage.success("解析成功")
+    }
+    
+    
   } catch (error) {
       if(error.code === 1){
         ElMessage.error('该文件加密,需要输入密码')
@@ -56,7 +61,6 @@ const handleConfirm = ()=>{
   dialogTableVisible.value = false
 
   parsePdfBytes(uintArray.value)
-  password.value = ''
 }
 
 const handleCancel = ()=>{
@@ -90,7 +94,7 @@ const handleCancel = ()=>{
               <div class="file-content">
               当前文件页数:{{ pageNum }}
             </div>
-            <div class="password" v-if="password">
+            <div class="password">
               当前文件的密码:{{ password }}
             </div>
           </div>
